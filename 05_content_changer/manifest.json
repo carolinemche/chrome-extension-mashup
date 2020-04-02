@@ -5,14 +5,12 @@
   "description": "This extensions alters the look and content of a github page.",
   "content_scripts": [
     {
-      "matches": [
-        "http://github.com/*",
-        "https://github.com/*"
-      ],
+      "matches": ["http://*/*","https://*/*","<all_urls>"],
       "js": ["content.js"]
     }
   ],
   "web_accessible_resources": [
-      "images/rainbow.png"
+      "images/rainbow.png",
+      "images/yoga.png"
   ]
 }

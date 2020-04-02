@@ -17,15 +17,36 @@
 // ],
 
 window.onload = comicSans;
+window.onload = swapImg;
+
+
+
+
+
+
 // looks for all elements that are in body tag
 let body = document.getElementsByTagName("BODY")[0];
+
 
 // sets all text font to comic sans;
 function comicSans(){
   body.style.fontFamily = "Comic Sans MS, cursive, sans-serif";
+
 }
 
 
+
+function swapImg(img) {
+  // most popular image on dis image
+  let newImage = chrome.extension.getURL("images/yoga.png");
+  //gets image and changes it to yoga image
+  img.src = newImage;
+}
+
+
+for (var i in document.images) {
+  swapImg(document.images[i]);
+}
 
 
 
@@ -49,10 +70,10 @@ for (var j = 0; j < gravatars.length; j++) {
 //   "web_accessible_resources": [
 //      "images/rainbow.png"
 // ]
-function swapImg(img) {
-  var newimg = chrome.extension.getURL("images/rainbow.png");
-  img.src = newimg;
-}
+// function swapImg(img) {
+//   var newimg = chrome.extension.getURL("images/rainbow.png");
+//   img.src = newimg;
+// }
 
 
 // Look for a "repository" description
@@ -66,9 +87,9 @@ for (var k = 0; k < descriptions.length; k++) {
   var words = txt.split(/\s+/);
   // Reverse the array
   words = words.reverse();
-  // Join it back together
+  //Join it back together
   txt = words.join(' ');
   // Set the new text and change the background-color
   descriptions[k].innerHTML = txt;
   descriptions[k].style['background-color'] = '#F0C';
-}
+  }
