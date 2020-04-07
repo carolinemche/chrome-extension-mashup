@@ -27,11 +27,27 @@ window.onload = swapImg;
 // looks for all elements that are in body tag
 let body = document.getElementsByTagName("BODY")[0];
 
+//looks for paragraphs tags elements
+let paragraphs= document.getElementsByTagName('p');
+
+//function to get a random number
+function getRandom(max){
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+//changes the font size for current paragraph (so they are all different)
+for (var i = 0; i < paragraphs.length; i++) {
+  //inside the loop to generate a new number everytime
+  let num = getRandom(100);
+  paragraphs[i].style.fontSize = num + "px" ;
+  paragraphs[i].style.fontFamily = "Comic Sans MS, cursive, sans-serif";
+
+
+}
 
 // sets all text font to comic sans;
 function comicSans(){
   body.style.fontFamily = "Comic Sans MS, cursive, sans-serif";
-
 }
 
 
